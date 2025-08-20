@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Modal Success - CSS Terpisah</title>
+        <link rel="stylesheet" href="css/success-modal.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f0f0f0;
+                padding: 20px;
+                margin: 0;
+            }
+            .test-content {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .test-button {
+                background: #007bff;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                margin: 10px 5px;
+            }
+            .test-button:hover {
+                background: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="test-content">
+            <h1>Test Modal Success - CSS Terpisah</h1>
+            <p>
+                Ini adalah test untuk modal success dengan CSS yang dipisahkan
+                ke file terpisah.
+            </p>
+
+            <h3>Instruksi:</h3>
+            <ol>
+                <li>Klik tombol "Tampilkan Modal" di bawah</li>
+                <li>Modal success akan muncul dengan desain yang benar</li>
+                <li>Klik tombol "OK" untuk menutup modal</li>
+            </ol>
+
+            <button class="test-button" onclick="showModal()">
+                Tampilkan Modal
+            </button>
+            <button class="test-button" onclick="hideModal()">
+                Sembunyikan Modal
+            </button>
+        </div>
+
+        <!-- Modal Success -->
+        <div
+            id="successModal"
+            class="success-notification"
+            style="display: none"
+        >
+            <div class="success-modal">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </div>
+                <h3 class="success-title">Congratulations!</h3>
+                <p class="success-message">
+                    SPPD berhasil diajukan dan menunggu persetujuan.
+                </p>
+                <button class="success-button" onclick="hideModal()">OK</button>
+            </div>
+        </div>
+
+        <script>
+            function showModal() {
+                document.getElementById("successModal").style.display = "flex";
+            }
+
+            function hideModal() {
+                document.getElementById("successModal").style.display = "none";
+            }
+
+            // Auto show modal after 1 second
+            setTimeout(function () {
+                showModal();
+            }, 1000);
+        </script>
+    </body>
+</html>
